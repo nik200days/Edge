@@ -1,0 +1,257 @@
+/* Basic reset and global styles */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Public Sans', sans-serif;
+        background: #1B1F2C;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+
+    .container {
+        background: #1B1F2C;
+        border-radius: 15px;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    label {
+        font-size: 1em;
+        color: #fff;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+  #expiry-info{
+      font-size: 1em;
+      color: #fff;
+      margin-bottom: 10px;
+      display: block;
+  }
+
+    select, button {
+        background: #1B1F2C;
+        color: #fff;
+        font-size: 1em;
+        padding: 10px;
+        border-radius: 7px;
+        border: 1px solid #ddd;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 6px;
+        width: 100%;
+        max-width: 100%;
+        outline: none;
+        transition: all 0.3s ease;
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    select:focus, button:focus {
+        border-color: #026FD3;
+    }
+
+    button {
+        background-color: #026FD3;
+        color: white;
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        border-radius: 7px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        font-size: 1em;
+    }
+
+input[type="text"] {
+    width: 100%;
+    padding: 11px;
+    font-size: 16px;
+    border: none;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+
+#logo {
+    margin-bottom: 20px;
+}
+
+    .market-switch {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        width: 100%; /* Full width */
+    }
+
+    .market-button {
+        background-color: #026FD3;
+        color: white;
+        border: none;
+        border-radius: 7px;
+        padding: 10px 0; /* Vertical padding */
+        margin: 0;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+        font-family: 'Kumbh Sans', sans-serif;
+        flex: 1; /* Grow equally */
+        width: 48%; /* Slightly less than 50% to fit within container */
+    }
+
+    .market-button.active {
+        background-color: #026FD3; /* Darker blue for active button */
+    }
+
+    .market-button.inactive {
+        background-color: #1B1F2C; /* Background color for inactive button */
+        color: #aaa; /* Lighter text color for inactive button */
+    }
+
+    /* Currency info styling */
+    #currency-info {
+        font-size: 1em;
+        color: #fff;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    /* Result styling */
+    #result {
+        margin-top: 10px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: bold;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 7px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        text-align: center;
+        font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    #result.Up {
+        background-color: #05C65E;
+        box-shadow: 0 0 30px rgba(5, 198, 94, 0.3);
+    }
+
+    #result.Down {
+        background-color: #FF6251;
+        box-shadow: 0 0 30px rgba(255, 98, 81, 0.3);
+    }
+
+    #result::after {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 25px;
+    }
+
+    #result.Up::after {
+        content: '\f0aa'; /* FontAwesome up arrow */
+    }
+
+    #result.Down::after {
+        content: '\f0ab'; /* FontAwesome down arrow */
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .container {
+            padding: 20px;
+        }
+
+        select, button {
+            font-size: 0.9em;
+            padding: 8px;
+        }
+
+        .market-switch {
+            flex-direction: row; /* Ensure horizontal alignment */
+        }
+
+        .market-button {
+            width: 50%; /* 50% width for each button */
+            margin-right: 0; /* Remove margin on right */
+        }
+
+        .market-button:last-child {
+            margin-bottom: 0; /* Remove bottom margin on the last button */
+        }
+
+        #result {
+            font-size: 1.2em;
+        }
+    }
+
+#res {
+    background-color: #2B3040;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 7px;
+}
+
+#generate {
+    padding: 12px;
+    margin-bottom: 6px;
+}
+
+/* Custom SweetAlert2 styling */
+.swal-container {
+    font-family: 'Public Sans', sans-serif;
+    padding: 47px;
+}
+
+.swal-popup {
+    background: #1B1F2C;
+    color: #fff;
+    border-radius: 7px;
+    padding: 20px;
+}
+
+.swal-title {
+    color: #fff;
+}
+
+.swal-content {
+    color: #aaa;
+}
+
+.swal-confirm-button {
+    background: #00A3E0;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 50px 10px 40px;
+    justify-content: center;
+}
+#country-select-login {
+    margin-top: 10px;
+}
